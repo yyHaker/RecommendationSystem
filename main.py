@@ -129,10 +129,17 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--dataset_name', default='avazu')
     parser.add_argument('--dataset_path', default='data/Avazu/train', help='criteo/train.txt, avazu/train, or ml-1m/ratings.dat')
+<<<<<<< HEAD
     parser.add_argument('--model_name', default='nffm')
     parser.add_argument('--epoch', type=int, default=15)
     parser.add_argument('--learning_rate', type=float, default=0.001)
     parser.add_argument('--batch_size', type=int, default=2048 * 4)
+=======
+    parser.add_argument('--model_name', default='lr')
+    parser.add_argument('--epoch', type=int, default=15)
+    parser.add_argument('--learning_rate', type=float, default=0.001)
+    parser.add_argument('--batch_size', type=int, default=2048)
+>>>>>>> e07110c02c157d4830b67ebed475ffb4b23c0e6f
     parser.add_argument('--weight_decay', type=float, default=1e-6)
     parser.add_argument('--save_dir', default='result')
     args = parser.parse_args()
@@ -145,7 +152,10 @@ if __name__ == '__main__':
     # set device
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     args.device = device
+<<<<<<< HEAD
     logger.info("use device {}".format(args.device))
+=======
+>>>>>>> e07110c02c157d4830b67ebed475ffb4b23c0e6f
 
     # run main
     main(args.dataset_name,
