@@ -53,6 +53,8 @@ def get_model(name, dataset):
         return NeuralFieldAwareFactorizationMachineModel(field_dims, embed_dim=4, mlp_dims=(4, 4), dropout=0.2)
     elif name == 'afm':
         return AttentionalFactorizationMachineModel(field_dims, embed_dim=16, attn_size=16, dropouts=(0.2, 0.2))
+    elif name == 'nfm':
+        return NeuralFactorizationMachineModel(field_dims, embed_dim=64, mlp_dims=(64,), dropouts=(0.2, 0.2))
     else:
         raise ValueError('unknown model name: ' + name)
 

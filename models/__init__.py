@@ -15,3 +15,4 @@ from .wd import WideAndDeepModel
 from .dfm import DeepFactorizationMachineModel
 from .nffm import NeuralFieldAwareFactorizationMachineModel
 from .afm import AttentionalFactorizationMachineModel
+from .nfm import NeuralFactorizationMachineModel
