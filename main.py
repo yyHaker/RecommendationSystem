@@ -52,9 +52,19 @@ def get_model(name, dataset):
         logger.info('use NeuralFFM model')
         return NeuralFieldAwareFactorizationMachineModel(field_dims, embed_dim=4, mlp_dims=(4, 4), dropout=0.2)
     elif name == 'afm':
+        logger.info('use Attention Factorization Machine model')
         return AttentionalFactorizationMachineModel(field_dims, embed_dim=16, attn_size=16, dropouts=(0.2, 0.2))
     elif name == 'nfm':
+        logger.info('use Neural Factorization Machine model')
         return NeuralFactorizationMachineModel(field_dims, embed_dim=64, mlp_dims=(64,), dropouts=(0.2, 0.2))
+    elif name == 'ipnn':
+        logger.info('use product Neural Network model')
+        return ProductNeuralNetworkModel(field_dims, embed_dim=16, mlp_dims=(16,), method='inner', dropout=0.2)
+    elif name == 'opnn':
+        logger.info('use product Neural Network model')
+        return ProductNeuralNetworkModel(field_dims, embed_dim=16, mlp_dims=(16,), method='outer', dropout=0.2)
+    elif name == 'dcn':
+        return DeepCrossNetworkModel(field_dims, embed_dim=16, num_layers=3, mlp_dims=(16, 16), dropout=0.2)
     else:
         raise ValueError('unknown model name: ' + name)
 

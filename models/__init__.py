@@ -16,3 +16,5 @@ from .dfm import DeepFactorizationMachineModel
 from .nffm import NeuralFieldAwareFactorizationMachineModel
 from .afm import AttentionalFactorizationMachineModel
 from .nfm import NeuralFactorizationMachineModel
+from .pnn import ProductNeuralNetworkModel
+from .dcn import DeepCrossNetworkModel
